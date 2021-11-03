@@ -15,14 +15,23 @@ services:
       - my-network
     volumes:
       - "my-vol:/var/lib/mysql"
-
+  front:
+    build: ./front
+    container_name: front
+    ports:
+      - "80:80"
+    networks: 
+      - my-network
   api:
-    build: ./
+    build: ./api
     container_name: api
     ports:
       - "8080:8080"
+    depends_on:
+      - "mysql"
     networks:
       - my-network
+
 
 networks:
   my-network:

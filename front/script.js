@@ -97,7 +97,7 @@ class ListarProductos extends React.Component{
 
     obtenerProductos(){
 
-        let resp = axios.get("http://localhost:8080/productos");
+        let resp = axios.get("http://191.232.210.187:8080/productos");
         resp.then((x) => {
             //console.log(x.data);
             this.setState({productos: x.data});

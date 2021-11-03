@@ -188,7 +188,7 @@ class ListarProductos extends React.Component{
     this.obtenerProductoPorId(queryDict.id)
      }
     obtenerProductoPorId(id){
-        let resp = axios.get("http://localhost:80/productos/" + id);
+        let resp = axios.get("http://191.232.210.187:8080/productos/" + id);
         resp.then((x) => {
             console.log(x.data);
             this.setState({productoInd: x.data});
